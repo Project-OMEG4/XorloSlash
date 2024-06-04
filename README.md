@@ -1,9 +1,10 @@
 # What is XorloSlash?
  XorloSlash is a Twitch Extension that was made for the Castlevania: Symphony of the Night community over at <a href="https://discord.gg/ezGNEc2Wvh" target="_discord" title="Invite link to The Long Library discord server.">The Long Library</a>. This twitch extension was made just for fun and is built upon <a href="https://twitter.com/p4dd9" target="_twitter" title="A link to p4dd9 twitter page.">p4dd9's</a> own Twitch Extension: <a href="https://dashboard.twitch.tv/extensions/7jxiznd01xfopo19fx8itnoe9gpeln" target="_TwitchExtensions" title="A link to the twitch page for this extension">CEOBONK</a>
 
+
 ## Who or What is Xorlo?
-<a href="https://wwww.twitch.tv/DinnerDog" target="_blank" title="Link to DinnerDog's Twitch profile.">Dinnerdog</a> from The Long Library made a great video on this topic which you can watch below:
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/3we2b15eG4Q?si=-HA6uChyzibU5juL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></center>
+<a href="https://wwww.twitch.tv/DinnerDog" target="_blank" title="Link to DinnerDog's Twitch profile.">Dinnerdog</a> from The Long Library made <a href="https://www.youtube.com/embed/3we2b15eG4Q?si=-HA6uChyzibU5juL" target="_blank" title="Link to DinnerDog's video on Youtube regarding the Xorlo Lore"> a great video on this topic</a>.
+
 
 The TL:DW of it is this:
 
