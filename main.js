@@ -33,7 +33,8 @@ const SLASH_Y_OFFSET       = 40;    // px
 /* Audio Config */
 const VOLUME_INITIAL = 0;
 
-/* Audio Randomizer - Sound assets ripped by Eldri7ch @ x.com/eldri7ch */ 
+/* Audio Randomizer - Sound assets ripped using m35's jPSXdec */ 
+/* https://github.com/m35/jpsxdec */
 const swordAudio0 = new Audio("assets/slice.wav");
 const swordAudio1 = new Audio("assets/slash.wav");
 const swordAudio2 = new Audio("assets/tear.wav");
