@@ -20,7 +20,7 @@ const SLASH_ANIMATION_CHARGED_CLASSNAME = "animate-slash-charged";
 
 const RESET_SWORD_TIMEOUT  = 500;   // ms
 const CHARGE_SWORD_TIMEOUT = 1250;  // ms
-const EVOLUTION_TIMEOUT    = 60000  // ms // Use 900000 when this goes live
+const EVOLUTION_TIMEOUT    = 6000  // ms // Use 900000 when this goes live
 const SLASH_X_OFFSET       = 20;    // px
 const SLASH_Y_OFFSET       = 40;    // px
 
@@ -45,7 +45,7 @@ const swordAudio5 = new Audio("");
 function pickAudio() {
     // Define weights for each audio clip (multipliers)
     const weights = [
-        5,    // swordAudio0 (slice.wav)   - Weight: 5
+        7,    // swordAudio0 (slice.wav)   - Weight: 7
         5,    // swordAudio1 (slash.wav)   - Weight: 5
         0.5,  // swordAudio2 (tear.wav)    - Weight: 1
         0.5,  // swordAudio3 (gather.wav)  - Weight: 1
@@ -127,9 +127,11 @@ function toggleSwords() {
 
   // Apply blur only to the middle two images
   if (currentSwordIndex === 1 || currentSwordIndex === 2) {
-    swords[currentSwordIndex].style.filter = 'blur(3px)';
+    swords[currentSwordIndex].style.filter = 'blur(2px)';
+    swords[currentSwordIndex].classList.add('xorloEvolution');
   } else {
     swords[currentSwordIndex].style.filter = ''; // Remove blur for other images
+    swords[currentSwordIndex].classList.remove('xorloEvolution');
   }
 
   // Set custom display durations (ms)
