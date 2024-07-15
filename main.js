@@ -18,11 +18,11 @@ const SHAKE_ANIMATION_CLASSNAME         = "shake";
 const SLASH_ANIMATION_CLASSNAME         = "animate-slash";
 const SLASH_ANIMATION_CHARGED_CLASSNAME = "animate-slash-charged";
 
-const RESET_SWORD_TIMEOUT  = 500;   // ms
-const CHARGE_SWORD_TIMEOUT = 1250;  // ms
+const RESET_SWORD_TIMEOUT  = 500;  // ms
+const CHARGE_SWORD_TIMEOUT = 1250; // ms
 const EVOLUTION_TIMEOUT    = 6000  // ms // Use 900000 when this goes live
-const SLASH_X_OFFSET       = 20;    // px
-const SLASH_Y_OFFSET       = 40;    // px
+const SLASH_X_OFFSET       = 20;   // px
+const SLASH_Y_OFFSET       = 40;   // px
 
 
 // https://dev.twitch.tv/docs/extensions/guidelines-and-policies/#2-technical
@@ -45,12 +45,12 @@ const swordAudio5 = new Audio("");
 function pickAudio() {
     // Define weights for each audio clip (multipliers)
     const weights = [
-        7,    // swordAudio0 (slice.wav)   - Weight: 7
-        5,    // swordAudio1 (slash.wav)   - Weight: 5
-        0.5,  // swordAudio2 (tear.wav)    - Weight: 1
-        0.5,  // swordAudio3 (gather.wav)  - Weight: 1
-        2,    // swordAudio4 (huzzah.wav)  - Weight: 2
-        4,    // swordAudio5 (silence)     - Weight: 4
+        7,    // slice.wav  - Weight: 7
+        5,    // slash.wav  - Weight: 5
+        0.5,  // tear.wav   - Weight: 1
+        0.5,  // gather.wav - Weight: 1
+        2,    // huzzah.wav - Weight: 2
+        4,    // silence    - Weight: 4
     ];
 
     // Create an array with repeated audio clips based on weights
@@ -119,10 +119,18 @@ const swordImg4 = document.getElementById('swordEvolved');
 const swords = [swordImg1, swordImg2, swordImg3, swordImg4];
 
 let currentSwordIndex = 0;
+let reverseSwordOrder = false;
 
 function toggleSwords() {
   swords[currentSwordIndex].hidden = true;  // Toggle sword visibility 
-  currentSwordIndex = (currentSwordIndex + 1) % swords.length; // Move to the next image
+
+  // This is to determine the next index based on the reverseSwordOrder flag. 
+  if(reverseSwordOrder){
+    currentSwordIndex = (currentSwordIndex - 1 + swords.length) % swords.length;
+  } else {
+    currentSwordIndex = (currentSwordIndex + 1) % swords.length;
+  }
+     
   swords[currentSwordIndex].hidden = false; // Show the next image
 
   // Apply blur only to the middle two images
@@ -137,6 +145,11 @@ function toggleSwords() {
   // Set custom display durations (ms)
   const displayDuration = currentSwordIndex === 1 || currentSwordIndex === 2 ? 150 : EVOLUTION_TIMEOUT;
   setTimeout(toggleSwords, displayDuration);
+
+  // Reverse order when the evolution timer counts down to zero
+  if (currentSwordIndex === 0 || currentSwordIndex === 3) {
+    reverseSwordOrder = !reverseSwordOrder;
+  }
 }
 
 toggleSwords();
